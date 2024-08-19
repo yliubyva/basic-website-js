@@ -1,0 +1,25 @@
+{
+  "name": "fe-project",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html && npm run html:validate",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "predev": "npm run clean",
+    "html:validate": "w3c-html-validator --ignore='Trailing slash on void elements' --continue",
+    "html:validate:watch": "onchange 'src/**/*.html' -- npm run html:validate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "onchange": "^7.1.0",
+    "parcel": "^2.12.0",
+    "postcss": "^8.4.41",
+    "postcss-nested": "^6.2.0",
+    "rimraf": "^6.0.1",
+    "w3c-html-validator": "^1.8.2"
+  }
+}
