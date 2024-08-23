@@ -1,559 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
-    />
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-    ></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
     <link rel="stylesheet" href="./scss/main.scss" />
     <title>Monticello</title>
 </head>
+
 <body>
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
-        <symbol id="facebook" viewBox="0 0 40 40">
-          <path
-            d="M23.7188 21H21.375V28H18.25V21H15.7188V18.0938H18.25V15.9062C18.25 15.0729 18.4062 14.3646 18.7188 13.7812C19.0312 13.1979 19.4688 12.7604 20.0312 12.4688C20.6146 12.1562 21.2812 12 22.0312 12C22.3646 12 22.7188 12.0208 23.0938 12.0625C23.4688 12.0833 23.7604 12.1146 23.9688 12.1562L24.2812 12.1875V14.6562H23.0312C22.4479 14.6562 22.0208 14.8125 21.75 15.125C21.5 15.4167 21.375 15.7812 21.375 16.2188V18.0938H24.1562L23.7188 21Z"
-            fill="white"
-          />
-        </symbol>
-  
-        <symbol id="instagram" viewBox="0 0 40 40">
-          <path
-            d="M17.4688 17.4688C18.1771 16.7604 19.0312 16.4062 20.0312 16.4062C21.0312 16.4062 21.875 16.7604 22.5625 17.4688C23.2708 18.1562 23.625 19 23.625 20C23.625 21 23.2708 21.8542 22.5625 22.5625C21.875 23.25 21.0312 23.5938 20.0312 23.5938C19.0312 23.5938 18.1771 23.25 17.4688 22.5625C16.7812 21.8542 16.4375 21 16.4375 20C16.4375 19 16.7812 18.1562 17.4688 17.4688ZM18.375 21.6562C18.8333 22.1146 19.3854 22.3438 20.0312 22.3438C20.6771 22.3438 21.2292 22.1146 21.6875 21.6562C22.1458 21.1979 22.375 20.6458 22.375 20C22.375 19.3542 22.1458 18.8021 21.6875 18.3438C21.2292 17.8854 20.6771 17.6562 20.0312 17.6562C19.3854 17.6562 18.8333 17.8854 18.375 18.3438C17.9167 18.8021 17.6875 19.3542 17.6875 20C17.6875 20.6458 17.9167 21.1979 18.375 21.6562ZM24.3438 15.6875C24.5104 15.8333 24.5938 16.0208 24.5938 16.25C24.5938 16.4792 24.5104 16.6771 24.3438 16.8438C24.1979 17.0104 24.0104 17.0938 23.7812 17.0938C23.5521 17.0938 23.3542 17.0104 23.1875 16.8438C23.0208 16.6771 22.9375 16.4792 22.9375 16.25C22.9375 16.0208 23.0208 15.8333 23.1875 15.6875C23.3542 15.5208 23.5521 15.4375 23.7812 15.4375C24.0104 15.4375 24.1979 15.5208 24.3438 15.6875ZM27 17.125C27.0208 17.6875 27.0312 18.6458 27.0312 20C27.0312 21.3542 27.0208 22.3125 27 22.875C26.9375 24.1458 26.5521 25.1354 25.8438 25.8438C25.1562 26.5312 24.1771 26.8958 22.9062 26.9375C22.3438 26.9792 21.3854 27 20.0312 27C18.6771 27 17.7188 26.9792 17.1562 26.9375C15.8854 26.875 14.9062 26.5 14.2188 25.8125C13.9479 25.5625 13.7292 25.2708 13.5625 24.9375C13.3958 24.6042 13.2708 24.2812 13.1875 23.9688C13.125 23.6562 13.0938 23.2917 13.0938 22.875C13.0521 22.3125 13.0312 21.3542 13.0312 20C13.0312 18.6458 13.0521 17.6771 13.0938 17.0938C13.1562 15.8438 13.5312 14.875 14.2188 14.1875C14.9062 13.4792 15.8854 13.0938 17.1562 13.0312C17.7188 13.0104 18.6771 13 20.0312 13C21.3854 13 22.3438 13.0104 22.9062 13.0312C24.1771 13.0938 25.1562 13.4792 25.8438 14.1875C26.5521 14.875 26.9375 15.8542 27 17.125ZM25.5 24.125C25.5625 23.9583 25.6146 23.75 25.6562 23.5C25.6979 23.2292 25.7292 22.9167 25.75 22.5625C25.7708 22.1875 25.7812 21.8854 25.7812 21.6562C25.7812 21.4271 25.7812 21.1042 25.7812 20.6875C25.7812 20.2708 25.7812 20.0417 25.7812 20C25.7812 19.9375 25.7812 19.7083 25.7812 19.3125C25.7812 18.8958 25.7812 18.5729 25.7812 18.3438C25.7812 18.1146 25.7708 17.8229 25.75 17.4688C25.7292 17.0938 25.6979 16.7812 25.6562 16.5312C25.6146 16.2604 25.5625 16.0417 25.5 15.875C25.25 15.2292 24.8021 14.7812 24.1562 14.5312C23.9896 14.4688 23.7708 14.4167 23.5 14.375C23.25 14.3333 22.9375 14.3021 22.5625 14.2812C22.2083 14.2604 21.9167 14.25 21.6875 14.25C21.4792 14.25 21.1562 14.25 20.7188 14.25C20.3021 14.25 20.0729 14.25 20.0312 14.25C19.9896 14.25 19.7604 14.25 19.3438 14.25C18.9271 14.25 18.6042 14.25 18.375 14.25C18.1458 14.25 17.8438 14.2604 17.4688 14.2812C17.1146 14.3021 16.8021 14.3333 16.5312 14.375C16.2812 14.4167 16.0729 14.4688 15.9062 14.5312C15.2604 14.7812 14.8125 15.2292 14.5625 15.875C14.5 16.0417 14.4479 16.2604 14.4062 16.5312C14.3646 16.7812 14.3333 17.0938 14.3125 17.4688C14.2917 17.8229 14.2812 18.1146 14.2812 18.3438C14.2812 18.5521 14.2812 18.875 14.2812 19.3125C14.2812 19.7292 14.2812 19.9583 14.2812 20C14.2812 20.0833 14.2812 20.2812 14.2812 20.5938C14.2812 20.8854 14.2812 21.1354 14.2812 21.3438C14.2812 21.5312 14.2812 21.7812 14.2812 22.0938C14.3021 22.4062 14.3229 22.6771 14.3438 22.9062C14.3646 23.1146 14.3958 23.3333 14.4375 23.5625C14.4792 23.7917 14.5208 23.9792 14.5625 24.125C14.8333 24.7708 15.2812 25.2188 15.9062 25.4688C16.0729 25.5312 16.2812 25.5833 16.5312 25.625C16.8021 25.6667 17.1146 25.6979 17.4688 25.7188C17.8438 25.7396 18.1354 25.75 18.3438 25.75C18.5729 25.75 18.8958 25.75 19.3125 25.75C19.75 25.75 19.9896 25.75 20.0312 25.75C20.0938 25.75 20.3229 25.75 20.7188 25.75C21.1354 25.75 21.4583 25.75 21.6875 25.75C21.9167 25.75 22.2083 25.7396 22.5625 25.7188C22.9375 25.6979 23.25 25.6667 23.5 25.625C23.7708 25.5833 23.9896 25.5312 24.1562 25.4688C24.8021 25.1979 25.25 24.75 25.5 24.125Z"
-            fill="white"
-          />
-        </symbol>
-  
-        <symbol id="twitter" viewBox="0 0 40 40">
-          <path
-            d="M26.3438 16.75C26.3646 16.8333 26.375 16.9688 26.375 17.1562C26.375 18.2604 26.1667 19.3646 25.75 20.4688C25.3333 21.5521 24.7396 22.5521 23.9688 23.4688C23.2188 24.3646 22.2396 25.0938 21.0312 25.6562C19.8229 26.2188 18.4896 26.5 17.0312 26.5C15.1979 26.5 13.5208 26.0104 12 25.0312C12.2292 25.0521 12.4896 25.0625 12.7812 25.0625C14.3021 25.0625 15.6667 24.5938 16.875 23.6562C16.1458 23.6562 15.5 23.4479 14.9375 23.0312C14.3958 22.5938 14.0208 22.0521 13.8125 21.4062C14.0208 21.4271 14.2188 21.4375 14.4062 21.4375C14.6979 21.4375 14.9896 21.4062 15.2812 21.3438C14.7812 21.2396 14.3333 21.0312 13.9375 20.7188C13.5417 20.4062 13.2292 20.0312 13 19.5938C12.7708 19.1354 12.6562 18.6458 12.6562 18.125V18.0625C13.1146 18.3333 13.6042 18.4792 14.125 18.5C13.1458 17.8333 12.6562 16.9167 12.6562 15.75C12.6562 15.1667 12.8125 14.6146 13.125 14.0938C13.9375 15.1146 14.9271 15.9271 16.0938 16.5312C17.2812 17.1354 18.5417 17.4688 19.875 17.5312C19.8333 17.2812 19.8125 17.0312 19.8125 16.7812C19.8125 15.8854 20.125 15.1146 20.75 14.4688C21.3958 13.8229 22.1667 13.5 23.0625 13.5C24.0208 13.5 24.8229 13.8438 25.4688 14.5312C26.2188 14.3854 26.9167 14.125 27.5625 13.75C27.3125 14.5208 26.8333 15.125 26.125 15.5625C26.75 15.4792 27.375 15.3021 28 15.0312C27.5417 15.6979 26.9896 16.2708 26.3438 16.75Z"
-            fill="white"
-          />
-        </symbol>
-  
-        <symbol id="location" viewBox="0 0 384 512">
-          <path
-            d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"
-          />
-        </symbol>
-  
-        <symbol id="call" viewBox="0 0 512 512">
-          <path
-            d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
-          />
-        </symbol>
-  
-        <symbol id="inbox" viewBox="0 0 512 512">
-          <path
-            d="M121 32C91.6 32 66 52 58.9 80.5L1.9 308.4C.6 313.5 0 318.7 0 323.9L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-92.1c0-5.2-.6-10.4-1.9-15.5l-57-227.9C446 52 420.4 32 391 32L121 32zm0 64l270 0 48 192-51.2 0c-12.1 0-23.2 6.8-28.6 17.7l-14.3 28.6c-5.4 10.8-16.5 17.7-28.6 17.7l-120.4 0c-12.1 0-23.2-6.8-28.6-17.7l-14.3-28.6c-5.4-10.8-16.5-17.7-28.6-17.7L73 288 121 96z"
-          />
-        </symbol>
-  
-        <symbol id="clock" viewBox="0 0 512 512">
-          <path
-            d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"
-          />
-        </symbol>
-      </svg>
     <header class="header">
         <div class="header__container">
-          <a href="#" class="logo">
-            <img src="../assets/logo.svg" alt="logo" />
-          </a>
-          <nav class="navigation">
-            <ul class="navigation__list">
-              <li class="navigation__item">
-                <a href="#about-us" class="navigation__link">ABOUT US</a>
-              </li>
-              <li class="navigation__item">
-                <a href="#projects" class="navigation__link">PROJECTS</a>
-              </li>
-              <li class="navigation__item">
-                <a href="#news" class="navigation__link">NEWS</a>
-              </li>
-              <li class="navigation__item">
-                <a href="#contact" class="navigation__link">CONTACT</a>
-              </li>
+            <a href="#" class="logo">
+                <img src="../assets/logo.svg" alt="logo" />
+            </a>
+            <nav class="navigation">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <a href="#about-us" class="navigation__link">ABOUT US</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="#projects" class="navigation__link">PROJECTS</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="#news" class="navigation__link">NEWS</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="#contact" class="navigation__link">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
+            <ul class="social social__list">
+                <li class="social__item">
+                    <a href="#">
+                        <div class="icon--social">
+                            <img class="icon" src="/assets/facebook.svg" alt="facebook">
+                        </div>
+
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="#">
+                        <div class="icon--social">
+                            <img class="icon" src="/assets/twitter.svg" alt="twitter">
+                        </div>
+
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="#">
+                        <div class="icon--social">
+                            <img class="icon" src="/assets/instagram.svg" alt="instagram">
+                        </div>
+                    </a>
+                </li>
             </ul>
-          </nav>
-          <ul class="social social__list">
-            <li class="social__item">
-              <a href="#">
-                <!-- <svg class="icon icon--social">
-                  <use href="#facebook"></use>
-                </svg> -->
-                <div class="icon--social">
-                    <img class="icon" src="/assets/facebook.svg" alt="facebook">
-                </div>
-                
-              </a>
-            </li>
-            <li class="social__item">
-              <a href="#">
-                <!-- <svg class="icon icon--social">
-                  <use href="#twitter"></use>
-                </svg> -->
-                <div class="icon--social">
-                    <img class="icon" src="/assets/twitter.svg" alt="twitter">
-                </div>
-                
-              </a>
-            </li>
-            <li class="social__item">
-              <a href="#">
-                <!-- <svg class="icon icon--social">
-                  <use href="#instagram"></use>
-                </svg> -->
-
-                <div class="icon--social">
-                    <img class="icon" src="/assets/instagram.svg" alt="instagram">
-                </div>
-              </a>
-            </li>
-          </ul>
         </div>
-      </header>
+    </header>
 
-      <main class="main">
+    <main class="main">
         <section class="hero">
-          <div class="swiper swiper-1">
-            <div class="swiper-wrapper swiper-wrapper-1">
-              <div class="swiper-slide swiper-slide-1">
-                <img
-                  src="../assets/hero-bg-1.webp"
-                  alt="image-slide"
-                  class="image-slide"
-                />
-              </div>
-              <div class="swiper-slide swiper-slide-1">
-                <img
-                  src="../assets/hero-bg-2.webp"
-                  alt="image-slide"
-                  class="image-slide"
-                />
-              </div>
-              <div class="swiper-slide swiper-slide-1">
-                <img
-                  src="../assets/hero-bg-3.webp"
-                  alt="image-slide"
-                  class="image-slide"
-                />
-              </div>
-              <div class="swiper-slide swiper-slide-1">
-                <img
-                  src="../assets/hero-bg-4.webp"
-                  alt="image-slide"
-                  class="image-slide"
-                />
-              </div>
-              <div class="swiper-slide swiper-slide-1">
-                <img
-                  src="../assets/hero-bg-5.webp"
-                  alt="image-slide"
-                  class="image-slide"
-                />
-              </div>
+            <div class="swiper swiper-1">
+                <div class="swiper-wrapper swiper-wrapper-1">
+                    <div class="swiper-slide swiper-slide-1">
+                        <img src="../assets/hero-bg-1.webp" alt="image-slide" class="image-slide" />
+                    </div>
+                    <div class="swiper-slide swiper-slide-1">
+                        <img src="../assets/hero-bg-2.webp" alt="image-slide" class="image-slide" />
+                    </div>
+                    <div class="swiper-slide swiper-slide-1">
+                        <img src="../assets/hero-bg-3.webp" alt="image-slide" class="image-slide" />
+                    </div>
+                    <div class="swiper-slide swiper-slide-1">
+                        <img src="../assets/hero-bg-4.webp" alt="image-slide" class="image-slide" />
+                    </div>
+                    <div class="swiper-slide swiper-slide-1">
+                        <img src="../assets/hero-bg-5.webp" alt="image-slide" class="image-slide" />
+                    </div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-1"></div>
             </div>
-            <div class="swiper-pagination swiper-pagination-1"></div>
-          </div>
-          <div class="hero__text">
-            <h1 class="hero__title">SIMPLE & MODERN</h1>
-            <p class="hero__description">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</p>
-            <a href="#projects" class="hero__link"
-              ><span class="hero__link--arrow"></span
-            ></a>
-          </div>
+            <div class="hero__text">
+                <h1 class="hero__title">SIMPLE & MODERN</h1>
+                <p class="hero__description">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</p>
+                <a href="#projects" class="hero__link"><span class="hero__link--arrow"></span></a>
+            </div>
         </section>
-  
+
         <section class="section section--what-we-do">
-          <h2 id="about-us" class="section__title">WHAT WE DO</h2>
-          <div class="section__content content">
-            <div class="content__image content__image--back-blue">
-              <img
-                src="../assets/content-1.webp"
-                alt="image"
-                class="image image--back-blue"
-              />
+            <h2 id="about-us" class="section__title">WHAT WE DO</h2>
+            <div class="section__content content">
+                <div class="content__image content__image--back-blue">
+                    <img src="../assets/content-1.webp" alt="image" class="image image--back-blue" />
+                </div>
+                <div class="content__text-group">
+                    <span class="content__subtitle">ONE WORLD</span>
+                    <h3 class="content__title">TRADE CENTER</h3>
+                    <p class="content__description">
+                        Increasing prosperity in our lives can be accomplished by having
+                        the right frame of mind. The truth is, our thoughts are very
+                        powerful.
+                    </p>
+                    <button class="button content__button">MORE DETAILS</button>
+                    <a href="#" class="content__link">
+                        <img class="icon"  src="../assets/location-dark.svg" alt="location">
+                        <span>New York City, United States - 1776 feet</span>
+                    </a>
+                </div>
             </div>
-            <div class="content__text-group">
-              <span class="content__subtitle">ONE WORLD</span>
-              <h3 class="content__title">TRADE CENTER</h3>
-              <p class="content__description">
-                Increasing prosperity in our lives can be accomplished by having
-                the right frame of mind. The truth is, our thoughts are very
-                powerful.
-              </p>
-              <button class="button content__button">MORE DETAILS</button>
-              <a href="#" class="content__link">
-                <svg class="icon icon--link">
-                  <use href="#location"></use>
-                </svg>
-                <span>New York City, United States - 1776 feet</span>
-              </a>
+
+            <div class="section__content content">
+                <div class="content__image content__image--order content__image--back-purple">
+                    <img src="../assets/content-2.webp" alt="image" class="image image--back-purple" />
+                </div>
+                <div class="content__text-group">
+                    <span class="content__subtitle">INTERNATIONAL</span>
+                    <h3 class="content__title">COMMERCE CENTRE</h3>
+                    <p class="content__description">
+                        Successful businesses have many things in common, today we’ll look
+                        at the big ‘R’ of recognition and how a digital advertising
+                        network may help.
+                    </p>
+                    <button class="button content__button">MORE DETAILS</button>
+                    <a href="#" class="content__link">
+                        <img class="icon"  src="../assets/location-dark.svg" alt="location">
+                        <span>Hong Kong - 1588 feet</span>
+                    </a>
+                </div>
             </div>
-          </div>
-  
-          <div class="section__content content">
-            <div
-              class="content__image content__image--order content__image--back-purple"
-            >
-              <img
-                src="../assets/content-2.webp"
-                alt="image"
-                class="image image--back-purple"
-              />
-            </div>
-            <div class="content__text-group">
-              <span class="content__subtitle">INTERNATIONAL</span>
-              <h3 class="content__title">COMMERCE CENTRE</h3>
-              <p class="content__description">
-                Successful businesses have many things in common, today we’ll look
-                at the big ‘R’ of recognition and how a digital advertising
-                network may help.
-              </p>
-              <button class="button content__button">MORE DETAILS</button>
-              <a href="#" class="content__link">
-                <svg class="icon icon--link">
-                  <use href="#location"></use>
-                </svg>
-                <span>Hong Kong - 1588 feet</span>
-              </a>
-            </div>
-          </div>
         </section>
-  
+
         <section class="section section--news">
-          <h2 id="news" class="section__title section__title--news">
-            LATEST NEWS
-          </h2>
-          <div class="section__container section__container--news">
-            <div class="swiper swiper-2">
-              <div class="swiper-wrapper swiper-wrapper-2">
-                <div class="swiper-slide swiper-slide-2">
-                  <article class="section__article article">
-                    <img
-                      src="../assets/news-1.webp"
-                      alt="image"
-                      class="article__image"
-                    />
-                    <div class="article__head">
-                      <h3 class="article__title">
-                        SEE THE UNMATCHED BEAUTY OF THE GREAT.
-                      </h3>
-                      <p class="article__description">
-                        Free directories: directories are perfect for customers
-                        that are searching for...
-                      </p>
+            <h2 id="news" class="section__title section__title--news">
+                LATEST NEWS
+            </h2>
+            <div class="section__container section__container--news">
+                <div class="swiper swiper-2">
+                    <div class="swiper-wrapper swiper-wrapper-2">
+                        <div class="swiper-slide swiper-slide-2">
+                            <article class="section__article article">
+                                <img src="../assets/news-1.webp" alt="image" class="article__image" />
+                                <div class="article__head">
+                                    <h3 class="article__title">
+                                        SEE THE UNMATCHED BEAUTY OF THE GREAT.
+                                    </h3>
+                                    <p class="article__description">
+                                        Free directories: directories are perfect for customers
+                                        that are searching for...
+                                    </p>
+                                </div>
+
+                                <div class="article__author author">
+                                    <div class="author__avatar">
+                                        <img src="../assets/author-1.webp" alt="image-author" class="author__image" />
+                                    </div>
+                                    <div class="author__info">
+                                        <span class="author__name">ALJA BRUN</span>
+                                        <span class="author__date">20 Jan 2020</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide swiper-slide-2">
+                            <article class="section__article article">
+                                <img src="../assets/news-2.webp" alt="image" class="article__image" />
+                                <div class="article__head">
+                                    <h3 class="article__title">
+                                        EFFECTIVE ADVERTISING POINTERS.
+                                    </h3>
+                                    <p class="article__description">
+                                        Having a home based business is a wonderful asset to your
+                                        life...
+                                    </p>
+                                </div>
+
+                                <div class="article__author author">
+                                    <div class="author__avatar">
+                                        <img src="../assets/author-2.webp" alt="image-author" class="author__image" />
+                                    </div>
+                                    <div class="author__info">
+                                        <span class="author__name">DOMINIC FREEMAN</span>
+                                        <span class="author__date">13 Dec 2019</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide swiper-slide-2">
+                            <article class="section__article article">
+                                <img src="../assets/news-3.webp" alt="image" class="article__image" />
+                                <div class="article__head">
+                                    <h3 class="article__title">
+                                        HYPNOTIZE YOURSELF INTO THE GHOST.
+                                    </h3>
+                                    <p class="article__description">
+                                        There are many things that are important to catalog
+                                        design...
+                                    </p>
+                                </div>
+
+                                <div class="article__author author">
+                                    <div class="author__avatar">
+                                        <img src="../assets/author-3.webp" alt="image-author" class="author__image" />
+                                    </div>
+
+                                    <div class="author__info">
+                                        <span class="author__name">ALICE WARD</span>
+                                        <span class="author__date">30 Nov 2019</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide swiper-slide-2">
+                            <article class="section__article article">
+                                <img src="../assets/news-4.webp" alt="image" class="article__image" />
+                                <div class="article__head">
+                                    <h3 class="article__title">
+                                        EXPERIENCE THE FUTURE OF SMART LIVING.
+                                    </h3>
+                                    <p class="article__description">
+                                        Smart homes are revolutionizing the way we live, bringing
+                                        convenience...
+                                    </p>
+                                </div>
+
+                                <div class="article__author author">
+                                    <div class="author__avatar">
+                                        <img src="../assets/author-4.webp" alt="image-author" class="author__image" />
+                                    </div>
+
+                                    <div class="author__info">
+                                        <span class="author__name">LUCAS WINTERS</span>
+                                        <span class="author__date">12 Mar 2020</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide swiper-slide-2">
+                            <article class="section__article article">
+                                <img src="../assets/news-5.webp" alt="image" class="article__image" />
+                                <div class="article__head">
+                                    <h3 class="article__title">EXPLORING WONDERS OF NATURE.</h3>
+                                    <p class="article__description">
+                                        Dive into the most remote and pristine landscapes that
+                                        remain...
+                                    </p>
+                                </div>
+
+                                <div class="article__author author">
+                                    <div class="author__avatar">
+                                        <img src="../assets/author-5.webp" alt="image-author" class="author__image" />
+                                    </div>
+
+                                    <div class="author__info">
+                                        <span class="author__name">EMMA HAWKINS</span>
+                                        <span class="author__date">5 Aug 2020</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-  
-                    <div class="article__author author">
-                      <div class="author__avatar">
-                        <img
-                          src="../assets/author-1.webp"
-                          alt="image-author"
-                          class="author__image"
-                        />
-                      </div>
-                      <div class="author__info">
-                        <span class="author__name">ALJA BRUN</span>
-                        <span class="author__date">20 Jan 2020</span>
-                      </div>
-                    </div>
-                  </article>
                 </div>
-                <div class="swiper-slide swiper-slide-2">
-                  <article class="section__article article">
-                    <img
-                      src="../assets/news-2.webp"
-                      alt="image"
-                      class="article__image"
-                    />
-                    <div class="article__head">
-                      <h3 class="article__title">
-                        EFFECTIVE ADVERTISING POINTERS.
-                      </h3>
-                      <p class="article__description">
-                        Having a home based business is a wonderful asset to your
-                        life...
-                      </p>
-                    </div>
-  
-                    <div class="article__author author">
-                      <div class="author__avatar">
-                        <img
-                          src="../assets/author-2.webp"
-                          alt="image-author"
-                          class="author__image"
-                        />
-                      </div>
-                      <div class="author__info">
-                        <span class="author__name">DOMINIC FREEMAN</span>
-                        <span class="author__date">13 Dec 2019</span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <div class="swiper-slide swiper-slide-2">
-                  <article class="section__article article">
-                    <img
-                      src="../assets/news-3.webp"
-                      alt="image"
-                      class="article__image"
-                    />
-                    <div class="article__head">
-                      <h3 class="article__title">
-                        HYPNOTIZE YOURSELF INTO THE GHOST.
-                      </h3>
-                      <p class="article__description">
-                        There are many things that are important to catalog
-                        design...
-                      </p>
-                    </div>
-  
-                    <div class="article__author author">
-                      <div class="author__avatar">
-                        <img
-                          src="../assets/author-3.webp"
-                          alt="image-author"
-                          class="author__image"
-                        />
-                      </div>
-  
-                      <div class="author__info">
-                        <span class="author__name">ALICE WARD</span>
-                        <span class="author__date">30 Nov 2019</span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <div class="swiper-slide swiper-slide-2">
-                  <article class="section__article article">
-                    <img
-                      src="../assets/news-4.webp"
-                      alt="image"
-                      class="article__image"
-                    />
-                    <div class="article__head">
-                      <h3 class="article__title">
-                        EXPERIENCE THE FUTURE OF SMART LIVING.
-                      </h3>
-                      <p class="article__description">
-                        Smart homes are revolutionizing the way we live, bringing
-                        convenience...
-                      </p>
-                    </div>
-  
-                    <div class="article__author author">
-                      <div class="author__avatar">
-                        <img
-                          src="../assets/author-4.webp"
-                          alt="image-author"
-                          class="author__image"
-                        />
-                      </div>
-  
-                      <div class="author__info">
-                        <span class="author__name">LUCAS WINTERS</span>
-                        <span class="author__date">12 Mar 2020</span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <div class="swiper-slide swiper-slide-2">
-                  <article class="section__article article">
-                    <img
-                      src="../assets/news-5.webp"
-                      alt="image"
-                      class="article__image"
-                    />
-                    <div class="article__head">
-                      <h3 class="article__title">EXPLORING WONDERS OF NATURE.</h3>
-                      <p class="article__description">
-                        Dive into the most remote and pristine landscapes that
-                        remain...
-                      </p>
-                    </div>
-  
-                    <div class="article__author author">
-                      <div class="author__avatar">
-                        <img
-                          src="../assets/author-5.webp"
-                          alt="image-author"
-                          class="author__image"
-                        />
-                      </div>
-  
-                      <div class="author__info">
-                        <span class="author__name">EMMA HAWKINS</span>
-                        <span class="author__date">5 Aug 2020</span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
+                <div class="swiper-pagination swiper-pagination-2"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-            <div class="swiper-pagination swiper-pagination-2"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
         </section>
         <section class="section section--gallery">
-          <h2 id="projects" class="section__title section__title--gallery">
-            GALLERY
-          </h2>
-  
-          <div class="section__image-grid image-grid">
-            <img
-              src="../assets/gallery-1.webp"
-              alt="image-gallery"
-              class="image-grid__img1"
-            />
-            <img
-              src="../assets/gallery-2.webp"
-              alt="image-gallery"
-              class="image-grid__img2"
-            />
-            <img
-              src="../assets/gallery-3.webp"
-              alt="image-gallery"
-              class="image-grid__img3"
-            />
-            <img
-              src="../assets/gallery-4.webp"
-              alt="image-gallery"
-              class="image-grid__img4"
-            />
-            <img
-              src="../assets/gallery-5.webp"
-              alt="image-gallery"
-              class="image-grid__img5"
-            />
-          </div>
-  
-          <button class="button">SEE MORE</button>
-        </section>
-  
-        <section class="section section--contact">
-          <div id="map"></div>
-          <div
-            id="contact"
-            class="section__container section__container--contact"
-          >
-            <h2 class="section__title section__title--contact">GET IN TOUCH</h2>
-            <div class="section__contact contact">
-              <div class="contact__text">
-                <a href="" class="contact__link--location">
-                  <svg class="icon icon--contact">
-                    <use href="#location"></use>
-                  </svg>
-                  <span>91 Nolan Extensions Suite 670</span>
-                </a>
-                <a href="tel:+0013568682454" class="contact__link--location">
-                  <svg class="icon icon--contact">
-                    <use href="#call"></use>
-                  </svg>
-                  <span class="contact__number">+001 356-868-2454</span>
-                </a>
-                <a
-                  href="mailto:montichello@service.com"
-                  class="contact__link--location"
-                >
-                  <svg class="icon icon--contact">
-                    <use href="#inbox"></use>
-                  </svg>
-                  <span class="contact__email">montichello@service.com</span>
-                </a>
-                <div class="contact__work-hours">
-                  <svg class="icon icon--contact">
-                    <use href="#clock"></use>
-                  </svg>
-                  <span class="contact__work-hours">From 07:05AM to 19:30PM</span>
-                </div>
-              </div>
-              <form id="form" action="#" class="contact__form form">
-                <div class="form__group">
-                  <label for="name">
-                    <input
-                      type="text"
-                      id="name"
-                      class="input input__name"
-                      placeholder="Mollie Medina"
-                      required
-                    />
-                  </label>
-                  <span id="nameError" class="error-message"></span>
-                </div>
-  
-                <div class="form__group">
-                  <label for="email">
-                    <input
-                      type="email"
-                      id="email"
-                      class="input input__email"
-                      placeholder="Email"
-                      required
-                    />
-                  </label>
-                  <span id="emailError" class="error-message"></span>
-                </div>
-  
-                <button type="submit" class="form__button button">SUBMIT</button>
-              </form>
-            </div>
-          </div>
-        </section>
-      </main>
+            <h2 id="projects" class="section__title section__title--gallery">
+                GALLERY
+            </h2>
 
-      <footer class="footer">
+            <div class="section__image-grid image-grid">
+                <img src="../assets/gallery-1.webp" alt="image-gallery" class="image-grid__img1" />
+                <img src="../assets/gallery-2.webp" alt="image-gallery" class="image-grid__img2" />
+                <img src="../assets/gallery-3.webp" alt="image-gallery" class="image-grid__img3" />
+                <img src="../assets/gallery-4.webp" alt="image-gallery" class="image-grid__img4" />
+                <img src="../assets/gallery-5.webp" alt="image-gallery" class="image-grid__img5" />
+            </div>
+
+            <button class="button">SEE MORE</button>
+        </section>
+
+        <section class="section section--contact">
+            <div id="map"></div>
+            <div id="contact" class="section__container section__container--contact">
+                <h2 class="section__title section__title--contact">GET IN TOUCH</h2>
+                <div class="section__contact contact">
+                    <div class="contact__text">
+                        <a href="" class="contact__link--location">
+                            <img class="icon icon--contact" src="../assets/location.svg" alt="location">
+                            <span>91 Nolan Extensions Suite 670</span>
+                        </a>
+                        <a href="tel:+0013568682454" class="contact__link--location">
+                            <img class="icon icon--contact" src="../assets/call.svg" alt="call">
+                            <span class="contact__number">+001 356-868-2454</span>
+                        </a>
+                        <a href="mailto:montichello@service.com" class="contact__link--location">
+                            <img class="icon icon--contact"  src="../assets/inbox.svg" alt="inbox">
+                            <span class="contact__email">montichello@service.com</span>
+                        </a>
+                        <div class="contact__work-hours">
+                            <img class="icon icon--contact"  src="../assets/clock.svg" alt="clock">
+                            <span class="contact__work-hours">From 07:05AM to 19:30PM</span>
+                        </div>
+                    </div>
+                    <form id="form" action="#" class="contact__form form">
+                        <div class="form__group">
+                            <label for="name">
+                                <input type="text" id="name" class="input input__name" placeholder="Mollie Medina"
+                                    required />
+                            </label>
+                            <span id="nameError" class="error-message"></span>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="email">
+                                <input type="email" id="email" class="input input__email" placeholder="Email"
+                                    required />
+                            </label>
+                            <span id="emailError" class="error-message"></span>
+                        </div>
+
+                        <button type="submit" class="form__button button">SUBMIT</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
         <div class="footer__container">
-          <div class="footer__info">
-            <a href="#" class="logo">
-              <img src="../assets/logo.svg" alt="logo" />
-            </a>
-            <span class="footer__copyright">Copyrights © 2020 Montichello</span>
-          </div>
-  
-          <ul class="social social__list">
-            <li class="social__item">
-              <a href="#">
-                <svg class="icon icon--social">
-                  <use href="#facebook"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social__item">
-              <a href="#">
-                <svg class="icon icon--social">
-                  <use href="#twitter"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social__item">
-              <a href="#">
-                <svg class="icon icon--social">
-                  <use href="#instagram"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
+            <div class="footer__info">
+                <a href="#" class="logo">
+                    <img src="../assets/logo.svg" alt="logo" />
+                </a>
+                <span class="footer__copyright">Copyrights © 2020 Montichello</span>
+            </div>
+
+            <ul class="social social__list">
+                <li class="social__item">
+                    <a href="#">
+                        <div class="icon--social">
+                            <img class="icon" src="../assets/facebook.svg" alt="facebook">
+                        </div>
+
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="#">
+                        <div class="icon--social">
+                            <img class="icon" src="../assets/twitter.svg" alt="twitter">
+                        </div>
+
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="#">
+                        <div class="icon--social">
+                            <img class="icon" src="../assets/instagram.svg" alt="instagram">
+                        </div>
+                    </a>
+                </li>
+            </ul>
         </div>
-      </footer>
-      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-      <script type="module" src="/src/js/main.js"></script>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="/src/js/main.js"></script>
 </body>
+
 </html>
