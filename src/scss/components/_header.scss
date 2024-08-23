@@ -1,0 +1,13 @@
+.header {
+    position: absolute;
+    z-index: 100;
+    top: 53px;
+    left: 0;
+    height: $header-height;
+    width: 100%;
+
+    &__container {
+        @extend .container;
+        @include flex(row, nowrap, space-between, center);
+    }
+}

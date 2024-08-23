@@ -1,0 +1,8 @@
+.social {
+    @include flex(row, nowrap, space-between, center);
+    gap: 20px;
+    &__item {
+        width: 40px;
+        height: 40px;
+    }
+}

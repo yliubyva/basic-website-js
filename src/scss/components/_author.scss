@@ -1,0 +1,30 @@
+.author {
+  @include flex(row, nowrap, flex-start, center);
+  gap: 20px;
+
+  &__name {
+    @include text($size-description, 400, $color-dark-blue, 22px);
+  }
+
+  &__date {
+    @include text(14px, 400, $color-blue, 17px);
+  }
+
+  &__name,
+  &__date {
+    font-family: $font-main;
+  }
+
+  &__avatar {
+    width: 60px;
+    height: 60px;
+  }
+  &__image {
+    border-radius: 50%;
+  }
+
+  &__info {
+    @include flex(column);
+    gap: 6px;
+  }
+}

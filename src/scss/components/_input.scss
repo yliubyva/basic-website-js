@@ -1,0 +1,19 @@
+.input {
+    width: 310px;
+    height: 41px;
+    border: none;
+    background: none;
+    border-bottom: 1px solid $color-dark-blue-transparent-02;
+    font-family: $font-main;
+    @include text($size-description, 400, $color-dark-blue-transparent-02, 27px);
+
+    &:active,
+    &:focus {
+        border-bottom: 1px solid $color-dark-blue;
+        color: $color-dark-blue;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}

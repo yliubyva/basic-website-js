@@ -1,0 +1,35 @@
+.button {
+  width: 190px;
+  padding: 16px 0 17px;
+  font-family: $font-main;
+  @include text(14px, 400, $color-black, 17px);
+  background: none;
+
+  border: 1px solid $color-dark-blue-transparent-05;
+  outline: 1px solid;
+  outline-color: $color-dark-blue-transparent-05;
+  outline-offset: 0px;
+  -webkit-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+
+  &:hover,
+  &:focus {
+    border: 1px solid;
+    outline-color: $color-dark-blue;
+    outline-offset: 15px;
+    -webkit-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.6s;
+    -o-transition-duration: 0.6s;
+    transition-duration: 0.6s;
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,0 +1,21 @@
+.contact {
+    @include flex(row, wrap, space-between);
+    @media screen and (max-width: 768px) {
+        gap: 30px;
+        justify-content: center;
+    }
+    &__text {
+        @include flex(column, nowrap, space-between);
+        @media screen and (max-width: 768px) {
+            gap: 20px;
+        }
+    }
+
+    &__link--location,
+    &__work-hours {
+        font-family: $font-main;
+        @include text($size-description, 400, $color-black, 28px);
+        @include flex(row, nowrap, flex-start, center);
+        gap: 5px;
+    }
+}

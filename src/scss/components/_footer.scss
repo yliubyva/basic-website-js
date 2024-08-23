@@ -1,0 +1,26 @@
+.footer {
+    height: 549px;
+    background-image: url(/assets/footer-back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__container {
+        @extend .container;
+        @include flex(row, wrap, space-between);
+        max-width: 770px;
+        padding-top: 203px;
+        @media screen and (max-width: 768px) {
+            padding-top: 300px;
+            gap: 30px;
+        }
+    }
+
+    &__copyright {
+        font-family: $font-main;
+        @include text(14px, 400, $color-white, 17px);
+        display: block;
+        margin-top: 40px;
+    }
+
+
+}
