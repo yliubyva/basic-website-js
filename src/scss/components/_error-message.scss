@@ -1,0 +1,4 @@
+.error-message {
+    font-family: $font-main;
+    @include text(12px, 400, red);
+}

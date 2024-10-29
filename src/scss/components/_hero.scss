@@ -1,0 +1,77 @@
+.hero {
+  background: -o-linear-gradient(206.57deg, #7e5aff 16.9%, #55b7ff 83.27%);
+  background: linear-gradient(243.43deg, #7e5aff 16.9%, #55b7ff 83.27%);
+  height: 800;
+  max-height: 100%;
+  position: relative;
+
+  &__text {
+    @include flex(column, nowrap, flex-start, center);
+    @extend .container;
+    padding-top: 330px;
+    position: relative;
+    z-index: 3;
+  }
+  &__title {
+    @include text(80px, 700, $color-white, 97px);
+    font-family: $font-secondary;
+    margin-bottom: 20px;
+    @media screen and (max-width: 768px) {
+      font-size: 32px;
+    }
+  }
+  &__description {
+    font-family: $font-main;
+    @include text($size-description, 400, $color-white, 22px);
+    margin-bottom: 240px;
+  }
+
+  &__link {
+    border: 1px solid $color-white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 8px 15px;
+
+    outline: 1px solid;
+    outline-offset: 0px;
+    -webkit-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+
+    &,
+    &:hover,
+    &:focus {
+      outline-color: $color-white-transparent-04;
+    }
+
+    &:hover,
+    &:focus {
+      border: 1px solid $color-white-transparent-04;
+      outline-offset: 10px;
+      -webkit-transition-property: all;
+      -o-transition-property: all;
+      transition-property: all;
+      -webkit-transition-duration: 0.6s;
+      -o-transition-duration: 0.6s;
+      transition-duration: 0.6s;
+      -webkit-transition-timing-function: ease;
+      -o-transition-timing-function: ease;
+      transition-timing-function: ease;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &--arrow {
+      border: solid $color-white;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 3px;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+}

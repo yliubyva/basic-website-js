@@ -1,0 +1,38 @@
+.custom-pin {
+  max-width: 106px;
+  max-height: 106px;
+  background-color: rgba(255, 255, 255, 0.3);
+  position: relative;
+
+  &,
+  &::after,
+  &::before {
+    border-radius: 50%;
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  &::after {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 199;
+  }
+
+  &::before {
+    width: 16px;
+    height: 16px;
+    background-color: $color-purple;
+    z-index: 200;
+  }
+}

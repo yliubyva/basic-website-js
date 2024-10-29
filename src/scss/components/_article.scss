@@ -1,0 +1,29 @@
+.article {
+  background: $color-white;
+  width: 370px;
+  height: 514px;
+
+  &__image {
+    margin-bottom: 30px;
+  }
+
+  &__head,
+  &__author {
+    padding: 0 20px;
+  }
+
+  &__head {
+    margin-bottom: 39px;
+  }
+
+  &__title {
+    font-family: $font-secondary;
+    @include text($size-subtitle, 700, $color-dark-blue, 27px);
+    margin-bottom: 15px;
+  }
+
+  &__description {
+    font-family: $font-nav;
+    @include text($size-description, 400, $color-dark-blue, 25px);
+  }
+}

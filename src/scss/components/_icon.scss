@@ -1,0 +1,51 @@
+.icon {
+  width: 15px;
+  height: 15px;
+
+  &--link {
+    fill: $color-dark-blue;
+  }
+
+  &--contact {
+    width: 20px;
+    height: 20px;
+    fill: $color-purple;
+  }
+
+  &--social {
+    width: 40px;
+    height: 40px;
+    padding: 11px;
+    border-radius: 50%;
+    outline: 1px solid;
+    outline-offset: 0px;
+    -webkit-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+
+    &,
+    &:hover,
+    &:focus {
+      border: 1px solid $color-white-transparent-04;
+      outline-color: $color-white-transparent-04;
+    }
+
+    &:hover,
+    &:focus {
+      outline-offset: 10px;
+      -webkit-transition-property: all;
+      -o-transition-property: all;
+      transition-property: all;
+      -webkit-transition-duration: 0.6s;
+      -o-transition-duration: 0.6s;
+      transition-duration: 0.6s;
+      -webkit-transition-timing-function: ease;
+      -o-transition-timing-function: ease;
+      transition-timing-function: ease;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

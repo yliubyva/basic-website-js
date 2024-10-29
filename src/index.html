@@ -1,11 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <link rel="stylesheet" href="./scss/main.scss" />
+    <title>Monticello</title>
 </head>
+
 <body>
-    
+    <header class="header">
+        <div class="header__container">
+            <a href="#" class="logo">
+                <img src="../assets/logo.svg" alt="logo" />
+            </a>
+            <nav class="navigation">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <a href="#about-us" class="navigation__link">ABOUT US</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="#projects" class="navigation__link">PROJECTS</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="#news" class="navigation__link">NEWS</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="#contact" class="navigation__link">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
+            <ul class="social social__list">
+                <li class="social__item">
+                    <a href="#">
+                        <div class="icon--social">
+                            <img class="icon" src="/assets/facebook.svg" alt="facebook">
+                        </div>
+
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="#">
+                        <div class="icon--social">
+                            <img class="icon" src="/assets/twitter.svg" alt="twitter">
+                        </div>
+
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="#">
+                        <div class="icon--social">
+                            <img class="icon" src="/assets/instagram.svg" alt="instagram">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="swiper swiper-1">
+                <div class="swiper-wrapper swiper-wrapper-1">
+                    <div class="swiper-slide swiper-slide-1">
+                        <img src="../assets/hero-bg-1.webp" alt="image-slide" class="image-slide" />
+                    </div>
+                    <div class="swiper-slide swiper-slide-1">
+                        <img src="../assets/hero-bg-2.webp" alt="image-slide" class="image-slide" />
+                    </div>
+                    <div class="swiper-slide swiper-slide-1">
+                        <img src="../assets/hero-bg-3.webp" alt="image-slide" class="image-slide" />
+                    </div>
+                    <div class="swiper-slide swiper-slide-1">
+                        <img src="../assets/hero-bg-4.webp" alt="image-slide" class="image-slide" />
+                    </div>
+                    <div class="swiper-slide swiper-slide-1">
+                        <img src="../assets/hero-bg-5.webp" alt="image-slide" class="image-slide" />
+                    </div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-1"></div>
+            </div>
+            <div class="hero__text">
+                <h1 class="hero__title">SIMPLE & MODERN</h1>
+                <p class="hero__description">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</p>
+                <a href="#projects" class="hero__link"><span class="hero__link--arrow"></span></a>
+            </div>
+        </section>
+
+        <section class="section section--what-we-do">
+            <h2 id="about-us" class="section__title">WHAT WE DO</h2>
+            <div class="section__content content">
+                <div class="content__image content__image--back-blue">
+                    <img src="../assets/content-1.webp" alt="image" class="image image--back-blue" />
+                </div>
+                <div class="content__text-group">
+                    <span class="content__subtitle">ONE WORLD</span>
+                    <h3 class="content__title">TRADE CENTER</h3>
+                    <p class="content__description">
+                        Increasing prosperity in our lives can be accomplished by having
+                        the right frame of mind. The truth is, our thoughts are very
+                        powerful.
+                    </p>
+                    <button class="button content__button">MORE DETAILS</button>
+                    <a href="#" class="content__link">
+                        <img class="icon"  src="../assets/location-dark.svg" alt="location">
+                        <span>New York City, United States - 1776 feet</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="section__content content">
+                <div class="content__image content__image--order content__image--back-purple">
+                    <img src="../assets/content-2.webp" alt="image" class="image image--back-purple" />
+                </div>
+                <div class="content__text-group">
+                    <span class="content__subtitle">INTERNATIONAL</span>
+                    <h3 class="content__title">COMMERCE CENTRE</h3>
+                    <p class="content__description">
+                        Successful businesses have many things in common, today we’ll look
+                        at the big ‘R’ of recognition and how a digital advertising
+                        network may help.
+                    </p>
+                    <button class="button content__button">MORE DETAILS</button>
+                    <a href="#" class="content__link">
+                        <img class="icon"  src="../assets/location-dark.svg" alt="location">
+                        <span>Hong Kong - 1588 feet</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--news">
+            <h2 id="news" class="section__title section__title--news">
+                LATEST NEWS
+            </h2>
+            <div class="section__container section__container--news">
+                <div class="swiper swiper-2">
+                    <div class="swiper-wrapper swiper-wrapper-2">
+                        <div class="swiper-slide swiper-slide-2">
+                            <article class="section__article article">
+                                <img src="../assets/news-1.webp" alt="image" class="article__image" />
+                                <div class="article__head">
+                                    <h3 class="article__title">
+                                        SEE THE UNMATCHED BEAUTY OF THE GREAT.
+                                    </h3>
+                                    <p class="article__description">
+                                        Free directories: directories are perfect for customers
+                                        that are searching for...
+                                    </p>
+                                </div>
+
+                                <div class="article__author author">
+                                    <div class="author__avatar">
+                                        <img src="../assets/author-1.webp" alt="image-author" class="author__image" />
+                                    </div>
+                                    <div class="author__info">
+                                        <span class="author__name">ALJA BRUN</span>
+                                        <span class="author__date">20 Jan 2020</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide swiper-slide-2">
+                            <article class="section__article article">
+                                <img src="../assets/news-2.webp" alt="image" class="article__image" />
+                                <div class="article__head">
+                                    <h3 class="article__title">
+                                        EFFECTIVE ADVERTISING POINTERS.
+                                    </h3>
+                                    <p class="article__description">
+                                        Having a home based business is a wonderful asset to your
+                                        life...
+                                    </p>
+                                </div>
+
+                                <div class="article__author author">
+                                    <div class="author__avatar">
+                                        <img src="../assets/author-2.webp" alt="image-author" class="author__image" />
+                                    </div>
+                                    <div class="author__info">
+                                        <span class="author__name">DOMINIC FREEMAN</span>
+                                        <span class="author__date">13 Dec 2019</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide swiper-slide-2">
+                            <article class="section__article article">
+                                <img src="../assets/news-3.webp" alt="image" class="article__image" />
+                                <div class="article__head">
+                                    <h3 class="article__title">
+                                        HYPNOTIZE YOURSELF INTO THE GHOST.
+                                    </h3>
+                                    <p class="article__description">
+                                        There are many things that are important to catalog
+                                        design...
+                                    </p>
+                                </div>
+
+                                <div class="article__author author">
+                                    <div class="author__avatar">
+                                        <img src="../assets/author-3.webp" alt="image-author" class="author__image" />
+                                    </div>
+
+                                    <div class="author__info">
+                                        <span class="author__name">ALICE WARD</span>
+                                        <span class="author__date">30 Nov 2019</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide swiper-slide-2">
+                            <article class="section__article article">
+                                <img src="../assets/news-4.webp" alt="image" class="article__image" />
+                                <div class="article__head">
+                                    <h3 class="article__title">
+                                        EXPERIENCE THE FUTURE OF SMART LIVING.
+                                    </h3>
+                                    <p class="article__description">
+                                        Smart homes are revolutionizing the way we live, bringing
+                                        convenience...
+                                    </p>
+                                </div>
+
+                                <div class="article__author author">
+                                    <div class="author__avatar">
+                                        <img src="../assets/author-4.webp" alt="image-author" class="author__image" />
+                                    </div>
+
+                                    <div class="author__info">
+                                        <span class="author__name">LUCAS WINTERS</span>
+                                        <span class="author__date">12 Mar 2020</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide swiper-slide-2">
+                            <article class="section__article article">
+                                <img src="../assets/news-5.webp" alt="image" class="article__image" />
+                                <div class="article__head">
+                                    <h3 class="article__title">EXPLORING WONDERS OF NATURE.</h3>
+                                    <p class="article__description">
+                                        Dive into the most remote and pristine landscapes that
+                                        remain...
+                                    </p>
+                                </div>
+
+                                <div class="article__author author">
+                                    <div class="author__avatar">
+                                        <img src="../assets/author-5.webp" alt="image-author" class="author__image" />
+                                    </div>
+
+                                    <div class="author__info">
+                                        <span class="author__name">EMMA HAWKINS</span>
+                                        <span class="author__date">5 Aug 2020</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-2"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+        <section class="section section--gallery">
+            <h2 id="projects" class="section__title section__title--gallery">
+                GALLERY
+            </h2>
+
+            <div class="section__image-grid image-grid">
+                <img src="../assets/gallery-1.webp" alt="image-gallery" class="image-grid__img1" />
+                <img src="../assets/gallery-2.webp" alt="image-gallery" class="image-grid__img2" />
+                <img src="../assets/gallery-3.webp" alt="image-gallery" class="image-grid__img3" />
+                <img src="../assets/gallery-4.webp" alt="image-gallery" class="image-grid__img4" />
+                <img src="../assets/gallery-5.webp" alt="image-gallery" class="image-grid__img5" />
+            </div>
+
+            <button class="button">SEE MORE</button>
+        </section>
+
+        <section class="section section--contact">
+            <div id="map"></div>
+            <div id="contact" class="section__container section__container--contact">
+                <h2 class="section__title section__title--contact">GET IN TOUCH</h2>
+                <div class="section__contact contact">
+                    <div class="contact__text">
+                        <a href="" class="contact__link--location">
+                            <img class="icon icon--contact" src="../assets/location.svg" alt="location">
+                            <span>91 Nolan Extensions Suite 670</span>
+                        </a>
+                        <a href="tel:+0013568682454" class="contact__link--location">
+                            <img class="icon icon--contact" src="../assets/call.svg" alt="call">
+                            <span class="contact__number">+001 356-868-2454</span>
+                        </a>
+                        <a href="mailto:montichello@service.com" class="contact__link--location">
+                            <img class="icon icon--contact"  src="../assets/inbox.svg" alt="inbox">
+                            <span class="contact__email">montichello@service.com</span>
+                        </a>
+                        <div class="contact__work-hours">
+                            <img class="icon icon--contact"  src="../assets/clock.svg" alt="clock">
+                            <span class="contact__work-hours">From 07:05AM to 19:30PM</span>
+                        </div>
+                    </div>
+                    <form id="form" action="#" class="contact__form form">
+                        <div class="form__group">
+                            <label for="name">
+                                <input type="text" id="name" class="input input__name" placeholder="Mollie Medina"
+                                    required />
+                            </label>
+                            <span id="nameError" class="error-message"></span>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="email">
+                                <input type="email" id="email" class="input input__email" placeholder="Email"
+                                    required />
+                            </label>
+                            <span id="emailError" class="error-message"></span>
+                        </div>
+
+                        <button type="submit" class="form__button button">SUBMIT</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__info">
+                <a href="#" class="logo">
+                    <img src="../assets/logo.svg" alt="logo" />
+                </a>
+                <span class="footer__copyright">Copyrights © 2020 Montichello</span>
+            </div>
+
+            <ul class="social social__list">
+                <li class="social__item">
+                    <a href="#">
+                        <div class="icon--social">
+                            <img class="icon" src="../assets/facebook.svg" alt="facebook">
+                        </div>
+
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="#">
+                        <div class="icon--social">
+                            <img class="icon" src="../assets/twitter.svg" alt="twitter">
+                        </div>
+
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="#">
+                        <div class="icon--social">
+                            <img class="icon" src="../assets/instagram.svg" alt="instagram">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="/src/js/main.js"></script>
 </body>
+
 </html>

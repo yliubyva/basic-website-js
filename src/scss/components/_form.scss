@@ -1,0 +1,8 @@
+.form {
+    @include flex(column, nowrap, flex-start, flex-end);
+    gap: 30px;
+
+    &__group {
+        @include flex(column);
+    }
+}

@@ -1,0 +1,35 @@
+.navigation {
+  &__list {
+    @include flex(row, nowrap, space-between, flex-start);
+    gap: 70px;
+  }
+
+  &__link {
+    @include text(14px, 400, $color-white, 17px);
+    font-family: $font-nav;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      position: absolute;
+      top: 5px;
+      left: -14px;
+      border: 1px solid $color-white;
+      border-radius: 50%;
+    }
+
+    &:hover::before,
+    &:focus::before {
+      background: $color-white;
+      -webkit-transition: background-color 0.3s;
+      -o-transition: background-color 0.3s;
+      transition: background-color 0.3s;
+    }
+
+    &:focus::before {
+      border-color: transparent;
+    }
+  }
+}

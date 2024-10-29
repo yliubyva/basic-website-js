@@ -1,0 +1,81 @@
+.content {
+  @extend .container;
+  @include flex(row, wrap, space-between, center);
+  gap: 64px;
+  &:nth-of-type(1) {
+    margin-bottom: 120px;
+  }
+
+  &__subtitle {
+    @include text($size-subtitle, 400, $color-dark-blue, 27px);
+  }
+
+  &__title {
+    @include text($size-title, 700, $color-dark-blue, 54px);
+    margin-bottom: 19px;
+  }
+
+  &__title,
+  &__subtitle {
+    font-family: $font-secondary;
+  }
+
+  &__description {
+    font-family: $font-main;
+    @include text($size-description, 400, $color-dark-blue, 30px);
+    margin-bottom: 40px;
+  }
+
+  &__button {
+    margin-bottom: 60px;
+  }
+
+  &__link {
+    display: block;
+    font-family: $font-nav;
+    font-style: italic;
+    @include text(15px, 400, $color-black, 21px);
+  }
+
+  &__image {
+    max-width: 630px;
+    position: relative;
+    &--order {
+      -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+      order: 2;
+    }
+
+    &--back-blue::before,
+    &--back-purple::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      max-width: 585px;
+      max-height: 470px;
+      z-index: -1;
+      top: -57px;
+    }
+
+    &--back-blue::before {
+      background: $color-blue;
+      left: -215px;
+      @media screen and (max-width: 768px) {
+        left: 0;
+      }
+    }
+
+    &--back-purple::before {
+      background: $color-purple;
+      right: -215px;
+      @media screen and (max-width: 768px) {
+        right: 0;
+      }
+    }
+  }
+
+  &__text-group {
+    max-width: 476px;
+  }
+}
